@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <style>
+			
+		.container{
+			width:40%;
+		}
+		
+	</style>
+
+
+  </head>
+
+
+  <body>
+
+    <div class="container" ng-controller="dashboardController">
+	  	<div class="row">
+        	<div class="col-lg-3"><h1>Welcome</h1></div>
+            <div class="col-lg-5" align="right"><h3 ng-if="currentUser"><a ng-click="logout();" style="cursor:pointer;">Logout</a></h3></div>
+        	
+            
+        </div>
+		<div class="alert alert-success" ng-show="isEdit">Profile is updated!.</div>	
+        
+        <form id="regForm" name="regForm" class="form-signin" ng-submit="editUser();">
+        <h3 class="form-signin-heading">Edit Profile</h3>
+        <label for="inputUsernme" class="sr-only">Username: </label>
+        <input type="text" ng-model="username" value=""  id="inputUsernme" class="form-control" placeholder="User Name" required autofocus><br>
+        <label for="inputEmail" class="sr-only">Email address: </label>
+        <input type="email" ng-model="email" value="" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+        </form>
+        
+    </div> <!-- /container -->
+
+ 
+    
+	<script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/services/apiService.js"></script>
+    <script type="text/javascript" src="js/controller/dashboardController.js"></script>    
+
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <style>
+		.container{
+			width:30%;
+		}
+	</style>
+    
+   
+  </head>
+
+  <body>
+
+    <div class="container" ng-controller="RegistrationController">
+	  <div class="alert alert-danger" ng-show="isExist">User allready exist.</div>	
+      <form id="regForm" class="form-signin" ng-submit="signup();">
+        <h2 class="form-signin-heading">Please sign up</h2>
+        <label for="inputUsernme" class="sr-only">Username: </label>
+        <input type="text" ng-model="username" value=""  id="inputUsernme" class="form-control" placeholder="User Name" required autofocus><br>
+        <label for="inputPassword" class="sr-only">Password: </label>
+        <input type="password" ng-model="password" name="password"  value="" id="inputPassword" class="form-control" placeholder="Password" required><br>
+        <label for="inputEmail" class="sr-only">Email address: </label>
+        <input type="email" ng-model="email" value="" id="inputEmail" class="form-control" placeholder="Email" required autofocus><br>
+        <button class="btn btn-lg btn-primary btn-block" id="sub-btn" type="submit">Sign up</button>
+      </form>
+
+    </div> <!-- /container -->
+
+	<script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/services/apiService.js"></script>
+    <script type="text/javascript" src="js/controller/registrationController.js"></script>
+        
+
+  </body>
+</html>
